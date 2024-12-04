@@ -1,0 +1,70 @@
+{
+    "id": "108424",
+    "name": "Domino's Pizza",
+    "cloudinaryImageId": "vw6n5betlssnqelt7rmu",
+    "locality": "5TH Block",
+    "areaName": "Koramangala",
+    "costForTwo": "₹400 for two",
+    "cuisines": [
+        "Pizzas",
+        "Italian",
+        "Pastas",
+        "Desserts"
+    ],
+    "avgRating": 4.3,
+    "feeDetails": {
+        "restaurantId": "108424",
+        "fees": [
+            {
+                "name": "BASE_DISTANCE",
+                "fee": 3100
+            },
+            {
+                "name": "BASE_TIME"
+            },
+            {
+                "name": "ANCILLARY_SURGE_FEE"
+            }
+        ],
+        "totalFee": 3100
+    },
+    "parentId": "2456",
+    "avgRatingString": "4.3",
+    "totalRatingsString": "5K+",
+    "sla": {
+        "deliveryTime": 25,
+        "serviceability": "SERVICEABLE",
+        "slaString": "25 mins",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2023-09-17 00:59:00",
+        "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {},
+            "textBased": {},
+            "textExtendedBadges": {}
+        }
+    },
+    "aggregatedDiscountInfoV3": {
+        "header": "₹100 OFF",
+        "subHeader": "ABOVE ₹999",
+        "discountTag": "FLAT DEAL"
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+}

@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+p,
+ul,
+hr {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--Poppins-family);
+}
+
+:root {
+  --Poppins-family: "Poppins", serif;
+  --fs-36: 2.25rem;
+  --fs-24: 1.5rem;
+  --fs-20: 1.25rem;
+  --fs-15: 0.938rem;
+  --fs-13: 0.813rem;
+  --color-red: #ea5454;
+  --color-aqua: #44d3d2;
+  --color-orange: #fcae4a;
+  --color-blue: #549ef2;
+  --color-gray: #c2c9d6;
+  --color-dark-gray: #565454;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+  color: var(--color-orange);
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo h1 {
+  font-size: var(--fs-15);
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-evenly;
+  gap: 100;
+}
+nav ul li {
+  cursor: pointer;
+}
+hr {
+  height: 1px;
+  color: var(--color-gray);
+  background: var(--color-gray);
+  font-size: 0;
+  border: 0;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  margin: 0 2rem;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+    row-gap: 2rem;
+    margin: 3rem 0;
+}
+.card-wrapper {
+  cursor: pointer;
+  max-width: 231px;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+}
+.card-wrapper:hover {
+  transform: scale(0.95); /* Scales down the card to 90% of its size */
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+.card-img {
+  max-height: 154px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-desc {
+  padding: 0.625rem;
+  padding-bottom: 0;
+}
+.card-desc p,
+h2 {
+  font-size: var(--fs-15);
+  font-weight: 300;
+  color: var(--color-dark-gray);
+}
+.card-desc h1, p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
