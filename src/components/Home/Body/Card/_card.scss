@@ -1,0 +1,48 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+    row-gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .card-wrapper {
+    cursor: pointer;
+    max-width: 231px;
+    @include transition(transform, 0.3s, ease-in-out);
+  
+    &:hover {
+      @include transform(scale(0.95));
+    }
+  }
+  
+  .card-img {
+    max-height: 154px;
+    overflow: hidden;
+    border-radius: 10px;
+  
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  
+  .card-desc {
+    padding: 0.625rem;
+    padding-bottom: 0;
+  
+    p,
+    h2 {
+      font-size: $fs-15;
+      font-weight: 300;
+      color: $color-dark-gray;
+    }
+  
+    h1,
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }

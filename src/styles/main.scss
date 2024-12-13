@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'mixins';
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body{
+ height: 100%;
+ font-family: $Poppins-family;
+}
+body,
+h1,
+h2,
+p,
+ul,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+@import '../components/Home/home';

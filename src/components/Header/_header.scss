@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+    color: $color-orange;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    h1 {
+      font-size: $fs-15;
+    }
+  }
+  
+  nav {
+    ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-evenly;
+      gap: 100;
+  
+      li {
+        cursor: pointer;
+      }
+    }
+  }

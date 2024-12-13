@@ -1,0 +1,14 @@
+body hr {
+    height: 1px;
+    color: $color-gray;
+    background: $color-gray;
+    font-size: 0;
+    border: 0;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    margin: 0 2rem;
+    flex-direction: column;
+  }
