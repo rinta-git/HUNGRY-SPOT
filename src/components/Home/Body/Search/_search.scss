@@ -1,0 +1,19 @@
+.search-wrap {
+  margin: 0 1rem;
+  position: relative;
+  input {
+    border-radius: 20px;
+    border: 1px solid #fcae4a;
+    padding: 0.5rem;
+  }
+  input:focus {
+    border: 1px solid #fcae4a;
+    outline: none;
+  }
+  .icon {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: #fcae4a;
+  }
+}

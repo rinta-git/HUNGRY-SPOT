@@ -62,6 +62,30 @@ body hr {
   flex-direction: column;
 }
 
+.search-sort-filter {
+  display: flex;
+}
+
+.search-wrap {
+  margin: 0 1rem;
+  position: relative;
+}
+.search-wrap input {
+  border-radius: 20px;
+  border: 1px solid #fcae4a;
+  padding: 0.5rem;
+}
+.search-wrap input:focus {
+  border: 1px solid #fcae4a;
+  outline: none;
+}
+.search-wrap .icon {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #fcae4a;
+}
+
 .filter-section {
   position: relative;
 }
@@ -213,4 +237,41 @@ div.filter-buttons {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.shimmer-card {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  background-color: #FFF;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 231px;
+}
+
+.shimmer-bg {
+  animation-duration: 2.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: #ddd;
+  background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+  background-size: 1200px 100%;
+}
+
+.shimmer-img {
+  height: 154px;
+}
+
+.shimmer-title {
+  height: 24px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.shimmer-content {
+  height: 8px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 8px;
 }/*# sourceMappingURL=main.css.map */

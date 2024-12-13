@@ -20,7 +20,7 @@ export const Card = (props) => {
             </span>
             <span>&nbsp;&nbsp;{time}</span>
           </div>
-          <p>{cuisines.join(',')}</p>
+          <p>{cuisines.join(', ')}</p>
           <h2><FontAwesomeIcon icon={faMapMarkerAlt} /> {location}</h2>
         </div>
       </section>

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { RES_LIST } from "../../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addRestaurants } from "./restaurentSlice";
+import { ShimmerCard } from "./Card/ShimmerCard";
 
 export const Restaurents = () => {
   const [restaurants, setRestaurents] = useState([]);
@@ -50,17 +51,21 @@ export const Restaurents = () => {
           </section>
         </section>
         <section className="cards">
-          {(isFilterActive ? filteredRestaurants : restaurants)?.map(
-            (restaurant) => (
-              <Card
-                key={restaurant?.info?.id}
-                restaurentName={restaurant?.info?.name}
-                resImg={restaurant?.info?.cloudinaryImageId}
-                rating={restaurant?.info?.avgRating}
-                time={restaurant?.info?.sla?.slaString}
-                cuisines={restaurant?.info?.cuisines}
-                location={restaurant?.info?.areaName}
-              />
+          {!isFilterActive && !restaurants.length ? (
+            Array(20).fill(<ShimmerCard />)
+          ) : (
+            (isFilterActive ? filteredRestaurants : restaurants)?.map(
+              (restaurant) => (
+                <Card
+                  key={restaurant?.info?.id}
+                  restaurentName={restaurant?.info?.name}
+                  resImg={restaurant?.info?.cloudinaryImageId}
+                  rating={restaurant?.info?.avgRating}
+                  time={restaurant?.info?.sla?.slaString}
+                  cuisines={restaurant?.info?.cuisines}
+                  location={restaurant?.info?.areaName}
+                />
+              )
             )
           )}
         </section>
