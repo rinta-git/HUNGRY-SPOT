@@ -29,7 +29,7 @@ export const Filter = () => {
 
   const applyFilters = () => {
     const filteredResList = filterRestaurentList(filters, resList);
-    dispatch(updateFilteredRestaurants(filteredResList));
+    dispatch(updateFilteredRestaurants({filteredResList}));
     setShowFilter(!showFilter);
     setIsFilterApplied(true);
   };
@@ -37,7 +37,7 @@ export const Filter = () => {
   const clearFilters = () => {
     setFilters([]);
     setCheckState({});
-    dispatch(updateFilteredRestaurants(resList));
+    dispatch(updateFilteredRestaurants({filteredResList:resList}));
     setIsFilterApplied(false);
     setShowFilter(!showFilter);
   };

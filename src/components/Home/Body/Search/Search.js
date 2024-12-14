@@ -12,10 +12,10 @@ export const Search = () => {
     if(e.key === 'Enter'){
       if(e.target.value){
         const searchedList = getSearchedList(e.target.value, resList);
-        dispatch(updateFilteredRestaurants(searchedList));
+        dispatch(updateFilteredRestaurants({filteredResList:searchedList}));
       }
       else{
-        dispatch(updateFilteredRestaurants(resList));
+        dispatch(updateFilteredRestaurants({filteredResList:resList}));
       }
     }
   }

@@ -1,0 +1,25 @@
+.sort-box{
+    background-color: #fff;
+    border: 1px solid #c2c9d6;
+    border-radius: 20px;
+    min-height: 220px;
+    margin-top: .313rem;
+    position: absolute;
+}
+.sort-options{
+    padding: 0 .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 1.063rem;
+    padding-left: 1rem;
+    font-size: .813rem;
+    label{
+        cursor: pointer;
+    }
+}
+.sort-apply-btn{
+    padding: .8rem;
+    display: flex;
+    justify-content: flex-end;
+}

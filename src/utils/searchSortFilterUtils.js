@@ -49,8 +49,25 @@ export const filterRestaurentList = (filters, resList) => {
   return newList;
 };
 
-export const getSearchedList = (searchText, resList) => {
+export const getSearchedList = (searchText, resList = []) => {
   const resListCopy = resList.flat();
   const filteredList = resListCopy.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
   return filteredList;
+}
+
+export const getSortedList = (option, resList) => {
+  const resListCopy = resList.flat();
+  switch(option){
+    case "Delivery Time":
+      //
+      break;
+    case "Rating":
+      return resListCopy.sort((a,b) => b?.info?.avgRating - a?.info?.avgRating);
+    case "Name":
+      return resListCopy.sort((a,b) => a?.info?.name.localeCompare(b?.info?.name));
+    case "Location":
+      return resListCopy.sort((a,b) => a?.info?.areaName.localeCompare(b?.info?.areaName));
+    default:
+      return resListCopy;
+  }
 }

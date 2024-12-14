@@ -13,8 +13,8 @@ const restaurentSlice = createSlice({
       state.filteredRestaurants = action.payload; // Initialize filtered list as the complete list
     },
     updateFilteredRestaurants: (state, action) => {
-      state.filteredRestaurants = action.payload;
-      state.filtersActive = action.payload.length !== state.items.length;
+      state.filteredRestaurants = action.payload?.filteredResList;
+      state.filtersActive = action.payload?.isSorted || action.payload?.filteredResList.length !== state.items.length;
     },
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload.id);
