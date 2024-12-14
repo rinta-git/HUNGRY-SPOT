@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const restaurentSlice = createSlice({
-  name: "restaurents",
+  name: "restaurants",
   initialState: {
     items: [], // Original unfiltered list
     filteredRestaurants: [], // Filtered list

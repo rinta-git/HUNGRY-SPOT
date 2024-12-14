@@ -1,6 +1,6 @@
-import { faL, faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FILTERS } from "../../../../utils/constants";
 import {
   filterRestaurentList,
@@ -16,7 +16,7 @@ export const Filter = () => {
   const [checkState, setCheckState] = useState({});
   const [isFilterApplied, setIsFilterApplied] = useState(false);
 
-  const resList = useSelector((store) => store.restaurents.items);
+  const resList = useSelector((store) => store.restaurants.items);
   const dispatch = useDispatch();
 
   const handleFilters = (e) => {

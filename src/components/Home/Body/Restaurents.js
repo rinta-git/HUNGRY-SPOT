@@ -12,10 +12,10 @@ export const Restaurents = () => {
   const [restaurants, setRestaurents] = useState([]);
   const dispatch = useDispatch();
   const filteredRestaurants = useSelector(
-    (store) => store?.restaurents?.filteredRestaurants
+    (store) => store?.restaurants?.filteredRestaurants
   );
   const isFilterActive = useSelector(
-    (store) => store?.restaurents?.filtersActive
+    (store) => store?.restaurants?.filtersActive
   );
 
   useEffect(() => {
@@ -51,23 +51,23 @@ export const Restaurents = () => {
           </section>
         </section>
         <section className="cards">
-          {!isFilterActive && !restaurants.length ? (
-            Array(20).fill(<ShimmerCard />)
-          ) : (
-            (isFilterActive ? filteredRestaurants : restaurants)?.map(
-              (restaurant) => (
-                <Card
-                  key={restaurant?.info?.id}
-                  restaurentName={restaurant?.info?.name}
-                  resImg={restaurant?.info?.cloudinaryImageId}
-                  rating={restaurant?.info?.avgRating}
-                  time={restaurant?.info?.sla?.slaString}
-                  cuisines={restaurant?.info?.cuisines}
-                  location={restaurant?.info?.areaName}
-                />
-              )
-            )
-          )}
+          {!isFilterActive && !restaurants.length
+            ? Array(20)
+                .fill()
+                .map((_, index) => <ShimmerCard key={index} />)
+            : (isFilterActive ? filteredRestaurants : restaurants)?.map(
+                (restaurant) => (
+                  <Card
+                    key={restaurant?.info?.id}
+                    restaurentName={restaurant?.info?.name}
+                    resImg={restaurant?.info?.cloudinaryImageId}
+                    rating={restaurant?.info?.avgRating}
+                    time={restaurant?.info?.sla?.slaString}
+                    cuisines={restaurant?.info?.cuisines}
+                    location={restaurant?.info?.areaName}
+                  />
+                )
+              )}
         </section>
       </main>
     </>

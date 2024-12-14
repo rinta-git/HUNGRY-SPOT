@@ -48,3 +48,9 @@ export const filterRestaurentList = (filters, resList) => {
   });
   return newList;
 };
+
+export const getSearchedList = (searchText, resList) => {
+  const resListCopy = resList.flat();
+  const filteredList = resListCopy.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
+  return filteredList;
+}

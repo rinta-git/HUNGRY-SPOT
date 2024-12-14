@@ -3,7 +3,7 @@ import restaurentReducer from "../components/Home/Body/restaurentSlice";
 
 const store = configureStore({
   reducer: {
-    restaurents: restaurentReducer,
+    restaurants: restaurentReducer,
   },
 });
 
