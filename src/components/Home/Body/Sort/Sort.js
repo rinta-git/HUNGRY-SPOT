@@ -3,18 +3,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { SORT_OPTIONS } from "../../../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { getSortedList } from "../../../../utils/searchSortFilterUtils";
+import {
+  filterRestaurentList,
+  getSortedList,
+} from "../../../../utils/searchSortFilterUtils";
 import { updateFilteredRestaurants } from "../restaurentSlice";
 
 export const Sort = () => {
   const [showSort, setShowSort] = useState(false);
   const [selectedOption, setSelectedOption] = useState(SORT_OPTIONS[0]);
   const resList = useSelector((store) => store?.restaurants?.items);
+  const filters = useSelector((store) => store?.restaurants?.filters);
   const dispatch = useDispatch();
 
   const handleSort = () => {
-    const sortedList = getSortedList(selectedOption, resList);
-    dispatch(updateFilteredRestaurants({filteredResList:sortedList, isSorted:true }));
+    let sortedList = getSortedList(selectedOption, resList);
+    if (filters.length) {
+      sortedList = filterRestaurentList(filters, sortedList);
+    }
+    dispatch(
+      updateFilteredRestaurants({
+        filteredResList: sortedList,
+        filters: [],
+        isSotingActive: true,
+        sortOption: selectedOption,
+      })
+    );
     setShowSort(!showSort);
   };
 

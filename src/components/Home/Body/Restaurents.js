@@ -17,6 +17,9 @@ export const Restaurents = () => {
   const isFilterActive = useSelector(
     (store) => store?.restaurants?.filtersActive
   );
+  const isSotingActive = useSelector(
+    (store) => store?.restaurants?.isSotingActive
+  );
 
   useEffect(() => {
     fetchRestaurents(RES_LIST);
@@ -55,19 +58,20 @@ export const Restaurents = () => {
             ? Array(20)
                 .fill()
                 .map((_, index) => <ShimmerCard key={index} />)
-            : (isFilterActive ? filteredRestaurants : restaurants)?.map(
-                (restaurant) => (
-                  <Card
-                    key={restaurant?.info?.id}
-                    restaurentName={restaurant?.info?.name}
-                    resImg={restaurant?.info?.cloudinaryImageId}
-                    rating={restaurant?.info?.avgRating}
-                    time={restaurant?.info?.sla?.slaString}
-                    cuisines={restaurant?.info?.cuisines}
-                    location={restaurant?.info?.areaName}
-                  />
-                )
-              )}
+            : (isFilterActive || isSotingActive
+                ? filteredRestaurants
+                : restaurants
+              )?.map((restaurant) => (
+                <Card
+                  key={restaurant?.info?.id}
+                  restaurentName={restaurant?.info?.name}
+                  resImg={restaurant?.info?.cloudinaryImageId}
+                  rating={restaurant?.info?.avgRating}
+                  time={restaurant?.info?.sla?.slaString}
+                  cuisines={restaurant?.info?.cuisines}
+                  location={restaurant?.info?.areaName}
+                />
+              ))}
         </section>
       </main>
     </>

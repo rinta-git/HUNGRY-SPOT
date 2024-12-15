@@ -1,10 +1,11 @@
 import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FILTERS } from "../../../../utils/constants";
 import {
   filterRestaurentList,
   getSelectedFilterOptions,
+  getSortedList,
 } from "../../../../utils/searchSortFilterUtils";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFilteredRestaurants } from "../restaurentSlice";
@@ -17,7 +18,17 @@ export const Filter = () => {
   const [isFilterApplied, setIsFilterApplied] = useState(false);
 
   const resList = useSelector((store) => store.restaurants.items);
+  const sortOption = useSelector((store) => store?.restaurants?.sortOption);
+  const isSortingActive = useSelector(
+    (store) => store?.restaurants?.isSotingActive
+  );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!isSortingActive) {
+      setCheckState({});
+    }
+  }, [isSortingActive]);
 
   const handleFilters = (e) => {
     getSelectedFilterOptions(e, filters, setFilters, selectedFilter);
@@ -28,8 +39,11 @@ export const Filter = () => {
   };
 
   const applyFilters = () => {
-    const filteredResList = filterRestaurentList(filters, resList);
-    dispatch(updateFilteredRestaurants({filteredResList}));
+    let filteredResList = filterRestaurentList(filters, resList);
+    if (sortOption !== "Relevance (Default)") {
+      filteredResList = getSortedList(sortOption, filteredResList);
+    }
+    dispatch(updateFilteredRestaurants({ filteredResList, filters }));
     setShowFilter(!showFilter);
     setIsFilterApplied(true);
   };
@@ -37,11 +51,19 @@ export const Filter = () => {
   const clearFilters = () => {
     setFilters([]);
     setCheckState({});
-    dispatch(updateFilteredRestaurants({filteredResList:resList}));
+
+    const sortedList =
+      sortOption !== "Relevance (Default)"
+        ? getSortedList(sortOption, resList)
+        : resList;
+    dispatch(
+      updateFilteredRestaurants({ filteredResList: sortedList, filters: [] })
+    );
+
     setIsFilterApplied(false);
     setShowFilter(!showFilter);
   };
-  
+
   const isFiltersSelected = Object.values(checkState).some(Boolean);
   return (
     <>
@@ -91,10 +113,18 @@ export const Filter = () => {
         </div>
         <hr />
         <div className="filter-buttons">
-          <button className="primary-btn" disabled={!isFilterApplied} onClick={clearFilters}>
+          <button
+            className="primary-btn"
+            disabled={!isFilterApplied}
+            onClick={clearFilters}
+          >
             Clear
           </button>
-          <button className='primary-btn' disabled={!isFiltersSelected} onClick={applyFilters}>
+          <button
+            className="primary-btn"
+            disabled={!isFiltersSelected}
+            onClick={applyFilters}
+          >
             Apply
           </button>
         </div>
