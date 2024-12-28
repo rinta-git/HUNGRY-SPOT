@@ -7,8 +7,10 @@ const restaurantsSlice = createSlice({
     filteredRestaurants: [], // Filtered list
     filtersActive: false, // Track if filters are active
     filters: [],
-    isSotingActive: false, //Track sorting active
+    isSortingActive: false, //Track sorting active
     sortOption: "Relevance (Default)",
+    isSearchActive: false,
+    searchText: "",
   },
   reducers: {
     addRestaurants: (state, action) => {
@@ -20,9 +22,12 @@ const restaurantsSlice = createSlice({
       state.filtersActive =
         action.payload?.filteredResList.length !== state.items.length;
       state.filters = action.payload.filters || state.filters;
-      state.isSotingActive =
-        action.payload?.isSotingActive || state.isSotingActive;
+      state.isSortingActive =
+        action.payload?.isSortingActive ?? state.isSortingActive;
       state.sortOption = action.payload.sortOption || state.sortOption;
+      state.isSearchActive =
+        action.payload.isSearchActive ?? state.isSearchActive;
+      state.searchText = action.payload.searchText ?? state.searchText; //returns action.payload.searchText if it is not null or undefined. Otherwise, it retains the current value of state.searchText
     },
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload.id);

@@ -113,6 +113,13 @@ body hr {
   right: 10px;
   color: #fcae4a;
 }
+.search-wrap i.fa-times {
+  cursor: pointer;
+}
+
+.searched-text h1 {
+  text-align: center;
+}
 
 .filter-section {
   position: relative;

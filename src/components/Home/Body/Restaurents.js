@@ -17,8 +17,8 @@ export const Restaurents = () => {
   const isFilterActive = useSelector(
     (store) => store?.restaurants?.filtersActive
   );
-  const isSotingActive = useSelector(
-    (store) => store?.restaurants?.isSotingActive
+  const isSortingActive = useSelector(
+    (store) => store?.restaurants?.isSortingActive
   );
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export const Restaurents = () => {
             ? Array(20)
                 .fill()
                 .map((_, index) => <ShimmerCard key={index} />)
-            : (isFilterActive || isSotingActive
+            : (isFilterActive || isSortingActive
                 ? filteredRestaurants
                 : restaurants
               )?.map((restaurant) => (

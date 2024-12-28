@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { FILTERS } from "../../../../utils/constants";
 import {
   filterRestaurentList,
+  getSearchedList,
   getSelectedFilterOptions,
   getSortedList,
 } from "../../../../utils/searchSortFilterUtils";
@@ -17,11 +18,14 @@ export const Filter = () => {
   const [checkState, setCheckState] = useState({});
   const [isFilterApplied, setIsFilterApplied] = useState(false);
 
-  const resList = useSelector((store) => store.restaurants.items);
-  const sortOption = useSelector((store) => store?.restaurants?.sortOption);
-  const isSortingActive = useSelector(
-    (store) => store?.restaurants?.isSotingActive
-  );
+  const {
+    items: resList,
+    sortOption,
+    isSortingActive,
+    searchText,
+    isSearchActive,
+  } = useSelector((store) => store.restaurants);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,7 +35,7 @@ export const Filter = () => {
   }, [isSortingActive]);
 
   const handleFilters = (e) => {
-    getSelectedFilterOptions(e, filters, setFilters, selectedFilter);
+    getSelectedFilterOptions(e, setFilters, selectedFilter);
     setCheckState((prevState) => ({
       ...prevState,
       [e.target.value]: e.target.checked,
@@ -43,6 +47,9 @@ export const Filter = () => {
     if (sortOption !== "Relevance (Default)") {
       filteredResList = getSortedList(sortOption, filteredResList);
     }
+    if (isSearchActive) {
+      filteredResList = getSearchedList(searchText, filteredResList);
+    }
     dispatch(updateFilteredRestaurants({ filteredResList, filters }));
     setShowFilter(!showFilter);
     setIsFilterApplied(true);
@@ -52,12 +59,15 @@ export const Filter = () => {
     setFilters([]);
     setCheckState({});
 
-    const sortedList =
+    let newList =
       sortOption !== "Relevance (Default)"
         ? getSortedList(sortOption, resList)
         : resList;
+    if (isSearchActive) {
+      newList = getSearchedList(searchText, resList);
+    }
     dispatch(
-      updateFilteredRestaurants({ filteredResList: sortedList, filters: [] })
+      updateFilteredRestaurants({ filteredResList: newList, filters: [] })
     );
 
     setIsFilterApplied(false);

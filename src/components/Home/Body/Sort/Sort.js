@@ -5,6 +5,7 @@ import { SORT_OPTIONS } from "../../../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import {
   filterRestaurentList,
+  getSearchedList,
   getSortedList,
 } from "../../../../utils/searchSortFilterUtils";
 import { updateFilteredRestaurants } from "../restaurentSlice";
@@ -12,8 +13,13 @@ import { updateFilteredRestaurants } from "../restaurentSlice";
 export const Sort = () => {
   const [showSort, setShowSort] = useState(false);
   const [selectedOption, setSelectedOption] = useState(SORT_OPTIONS[0]);
-  const resList = useSelector((store) => store?.restaurants?.items);
-  const filters = useSelector((store) => store?.restaurants?.filters);
+  const {
+    items: resList,
+    filters,
+    searchText,
+    isSearchActive,
+  } = useSelector((store) => store?.restaurants);
+
   const dispatch = useDispatch();
 
   const handleSort = () => {
@@ -21,11 +27,14 @@ export const Sort = () => {
     if (filters.length) {
       sortedList = filterRestaurentList(filters, sortedList);
     }
+    if (isSearchActive) {
+      sortedList = getSearchedList(searchText, sortedList);
+    }
     dispatch(
       updateFilteredRestaurants({
         filteredResList: sortedList,
-        filters: [],
-        isSotingActive: true,
+        filters: filters.length ? filters : [],
+        isSortingActive: true,
         sortOption: selectedOption,
       })
     );

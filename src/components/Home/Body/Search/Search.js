@@ -1,24 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSearchedList } from "../../../../utils/searchSortFilterUtils";
+import {
+  filterRestaurentList,
+  getSearchedList,
+  getSortedList,
+} from "../../../../utils/searchSortFilterUtils";
 import { updateFilteredRestaurants } from "../restaurentSlice";
 
 export const Search = () => {
   const [searchText, setSearchText] = useState("");
-  const resList = useSelector(store => store?.restaurants?.items)
+  const {
+    items: resList,
+    filters,
+    sortOption,
+  } = useSelector((store) => store?.restaurants);
   const dispatch = useDispatch();
 
-  const handleKeyPress = (e) => {
-    if(e.key === 'Enter'){
-      if(e.target.value){
-        const searchedList = getSearchedList(e.target.value, resList);
-        dispatch(updateFilteredRestaurants({filteredResList:searchedList}));
-      }
-      else{
-        dispatch(updateFilteredRestaurants({filteredResList:resList}));
-      }
+  const updateList = (text) => {
+    let resultList = resList;
+    if (text) {
+      resultList = getSearchedList(text, resList);
     }
-  }
+    if (sortOption !== "Relevance (Default)") {
+      resultList = getSortedList(sortOption, resultList);
+    }
+    if (filters.length) {
+      resultList = filterRestaurentList(filters, resultList);
+    }
+    return resultList;
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      const text = e.target.value;
+      dispatch(
+        updateFilteredRestaurants({
+          filteredResList: updateList(e.target.value),
+          searchText: text || "",
+          isSearchActive: true,
+        })
+      );
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchText("");
+    dispatch(
+      updateFilteredRestaurants({
+        filteredResList: updateList(""),
+        isSearchActive: false,
+        searchText: "",
+      })
+    );
+  };
   return (
     <>
       <div className="search-wrap">
@@ -29,7 +63,11 @@ export const Search = () => {
           onChange={(e) => setSearchText(e.target.value)}
           onKeyDown={handleKeyPress}
         />
-        <i className="fas fa-search icon"></i>
+        {searchText ? (
+          <i className="fa fa-times fa- m-n icon" onClick={clearSearch}></i>
+        ) : (
+          <i className="fas fa-search icon"></i>
+        )}
       </div>
     </>
   );
