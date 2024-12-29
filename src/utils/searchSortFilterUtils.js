@@ -1,3 +1,8 @@
+const getMidPoint = (duration) => {
+  const [min, max] = duration.split("-").map((time) => parseInt(time));
+  return (min + max) / 2;
+};
+
 export const getSelectedFilterOptions = (e, setFilters, selectedFilter) => {
   const { checked, value } = e.target;
   if (checked) {
@@ -98,8 +103,11 @@ export const getSortedList = (option, resList) => {
   const resListCopy = resList.flat();
   switch (option) {
     case "Delivery Time":
-      //
-      break;
+      return resListCopy.sort(
+        (a, b) =>
+          getMidPoint(a?.info?.sla?.slaString) -
+          getMidPoint(b?.info?.sla?.slaString)
+      );
     case "Rating":
       return resListCopy.sort(
         (a, b) => b?.info?.avgRating - a?.info?.avgRating

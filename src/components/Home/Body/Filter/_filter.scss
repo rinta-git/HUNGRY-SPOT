@@ -74,7 +74,9 @@ ul.filter-list {
   padding-left: 1rem;
   margin-left: 1rem;
   font-size: $fs-13;
-
+  label{
+    white-space: nowrap;
+  }
   label:hover,
   input {
     cursor: pointer;

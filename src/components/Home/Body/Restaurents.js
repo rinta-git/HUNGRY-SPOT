@@ -7,6 +7,7 @@ import { RES_LIST } from "../../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addRestaurants } from "./restaurentSlice";
 import { ShimmerCard } from "./Card/ShimmerCard";
+import { NothingPage } from "./NothingFound/NothingPage";
 
 export const Restaurents = () => {
   const [restaurants, setRestaurents] = useState([]);
@@ -39,6 +40,40 @@ export const Restaurents = () => {
     }
   };
 
+  const renderResCards = (restaurants) => {
+    return (
+      <section className="cards">
+        {restaurants.map((restaurant) => (
+          <Card
+            key={restaurant?.info?.id}
+            restaurentName={restaurant?.info?.name}
+            resImg={restaurant?.info?.cloudinaryImageId}
+            rating={restaurant?.info?.avgRating}
+            time={restaurant?.info?.sla?.slaString}
+            cuisines={restaurant?.info?.cuisines}
+            location={restaurant?.info?.areaName}
+          />
+        ))}
+      </section>
+    );
+  };
+
+  const renderContent = () => {
+    //show shimmer cards till data loads
+    if (!isFilterActive && !restaurants.length) {
+      return Array(20)
+        .fill()
+        .map((_, index) => <ShimmerCard key={index} />);
+    }
+    //if no item found
+    if ((isFilterActive || isSortingActive) && !filteredRestaurants.length) {
+      return <NothingPage />;
+    }
+    return renderResCards(
+      isFilterActive || isSortingActive ? filteredRestaurants : restaurants
+    );
+  };
+
   return (
     <>
       <main className="content">
@@ -53,26 +88,7 @@ export const Restaurents = () => {
             <Filter />
           </section>
         </section>
-        <section className="cards">
-          {!isFilterActive && !restaurants.length
-            ? Array(20)
-                .fill()
-                .map((_, index) => <ShimmerCard key={index} />)
-            : (isFilterActive || isSortingActive
-                ? filteredRestaurants
-                : restaurants
-              )?.map((restaurant) => (
-                <Card
-                  key={restaurant?.info?.id}
-                  restaurentName={restaurant?.info?.name}
-                  resImg={restaurant?.info?.cloudinaryImageId}
-                  rating={restaurant?.info?.avgRating}
-                  time={restaurant?.info?.sla?.slaString}
-                  cuisines={restaurant?.info?.cuisines}
-                  location={restaurant?.info?.areaName}
-                />
-              ))}
-        </section>
+        {renderContent()}
       </main>
     </>
   );

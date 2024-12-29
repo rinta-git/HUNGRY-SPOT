@@ -66,6 +66,10 @@ body hr {
   display: flex;
 }
 
+.nothing-found {
+  color: #fcae4a;
+}
+
 .sort-box {
   background-color: #fff;
   border: 1px solid #c2c9d6;
@@ -195,6 +199,9 @@ ul.filter-list li:hover {
   padding-left: 1rem;
   margin-left: 1rem;
   font-size: 0.813rem;
+}
+.selected-filter-section label {
+  white-space: nowrap;
 }
 .selected-filter-section label:hover,
 .selected-filter-section input {

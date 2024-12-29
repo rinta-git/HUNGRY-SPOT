@@ -9,11 +9,16 @@ export const FILTERS = {
     { id: uuidv4(), value: "4.5+" },
   ],
   "Delivery Time": [
-    { id: uuidv4(), value: "10-20 mins" },
+    { id: uuidv4(), value: "10-15 mins" },
+    { id: uuidv4(), value: "15-20 mins" },
     { id: uuidv4(), value: "20-25 mins" },
     { id: uuidv4(), value: "25-30 mins" },
-    { id: uuidv4(), value: "20-30 mins" },
+    { id: uuidv4(), value: "30-35 mins" },
+    { id: uuidv4(), value: "35-40 mins" },
     { id: uuidv4(), value: "40-45 mins" },
+    { id: uuidv4(), value: "45-50 mins" },
+    { id: uuidv4(), value: "50-55 mins" },
+    { id: uuidv4(), value: "55-60 mins" },
   ],
   "Veg/Non-Veg": [
     { id: uuidv4(), value: "Veg" },
