@@ -3,7 +3,6 @@ header {
   justify-content: space-between;
   align-items: center;
   margin: 0 2rem;
-  color: $color-orange;
 }
 
 .logo {
@@ -31,6 +30,13 @@ nav {
 
     li {
       cursor: pointer;
+      a{
+        color: $color-orange;
+        text-decoration: none;
+      }
+      a.active{
+        color: $color-green;
+      }
     }:hover{
       color: $color-green;
     }

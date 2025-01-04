@@ -11,6 +11,11 @@ body hr {
   align-items: center;
   margin: 0 2rem;
   flex-direction: column;
+  .cards{
+    a{
+      text-decoration: none;
+    }
+  }
 }
 .search-sort-filter {
   display: flex;

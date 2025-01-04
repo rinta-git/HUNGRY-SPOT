@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addRestaurants } from "./restaurentSlice";
 import { ShimmerCard } from "./Card/ShimmerCard";
 import { NothingPage } from "./NothingFound/NothingPage";
+import { Link } from "react-router";
 
 export const Restaurents = () => {
   const [restaurants, setRestaurents] = useState([]);
@@ -47,15 +48,19 @@ export const Restaurents = () => {
     return (
       <section className="cards">
         {restaurants.map((restaurant) => (
-          <Card
+          <Link
             key={restaurant?.info?.id}
-            restaurentName={restaurant?.info?.name}
-            resImg={restaurant?.info?.cloudinaryImageId}
-            rating={restaurant?.info?.avgRating}
-            time={restaurant?.info?.sla?.slaString}
-            cuisines={restaurant?.info?.cuisines}
-            location={restaurant?.info?.areaName}
-          />
+            to={`/restuarant/${restaurant?.info?.id}`}
+          >
+            <Card
+              restaurentName={restaurant?.info?.name}
+              resImg={restaurant?.info?.cloudinaryImageId}
+              rating={restaurant?.info?.avgRating}
+              time={restaurant?.info?.sla?.slaString}
+              cuisines={restaurant?.info?.cuisines}
+              location={restaurant?.info?.areaName}
+            />
+          </Link>
         ))}
       </section>
     );
