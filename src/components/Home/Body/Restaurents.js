@@ -21,6 +21,9 @@ export const Restaurents = () => {
   const isSortingActive = useSelector(
     (store) => store?.restaurants?.isSortingActive
   );
+  const isSearchActive = useSelector(
+    (store) => store?.restaurants?.isSearchActive
+  );
 
   useEffect(() => {
     fetchRestaurents(RES_LIST);
@@ -60,17 +63,28 @@ export const Restaurents = () => {
 
   const renderContent = () => {
     //show shimmer cards till data loads
-    if (!isFilterActive && !restaurants.length) {
-      return Array(20)
-        .fill()
-        .map((_, index) => <ShimmerCard key={index} />);
+    if (!isFilterActive && !restaurants?.length) {
+      return (
+        <section className="cards">
+          {Array(20)
+            .fill()
+            .map((_, index) => (
+              <ShimmerCard key={index} />
+            ))}
+        </section>
+      );
     }
     //if no item found
-    if ((isFilterActive || isSortingActive) && !filteredRestaurants.length) {
+    if (
+      (isFilterActive || isSortingActive || isSearchActive) &&
+      !filteredRestaurants.length
+    ) {
       return <NothingPage />;
     }
     return renderResCards(
-      isFilterActive || isSortingActive ? filteredRestaurants : restaurants
+      isFilterActive || isSortingActive || isSearchActive
+        ? filteredRestaurants
+        : restaurants
     );
   };
 
@@ -78,10 +92,10 @@ export const Restaurents = () => {
     <>
       <main className="content">
         <section className="search-sort-filter">
-          <section>
+          <section className="sort-section">
             <Sort />
           </section>
-          <section>
+          <section className="search-section">
             <Search />
           </section>
           <section className="filter-section">

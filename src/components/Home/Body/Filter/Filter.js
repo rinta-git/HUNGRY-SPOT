@@ -24,6 +24,7 @@ export const Filter = () => {
     isSortingActive,
     searchText,
     isSearchActive,
+    filtersActive
   } = useSelector((store) => store.restaurants);
 
   const dispatch = useDispatch();
@@ -78,7 +79,7 @@ export const Filter = () => {
   return (
     <>
       <button
-        className="primary-btn"
+        className={`primary-btn ${filtersActive ? 'active-btn' : ''}`}
         onClick={() => setShowFilter(!showFilter)}
       >
         Filter

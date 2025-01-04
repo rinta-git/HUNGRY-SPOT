@@ -1,20 +1,40 @@
 body hr {
-    height: 1px;
-    color: $color-gray;
-    background: $color-gray;
-    font-size: 0;
-    border: 0;
+  height: 1px;
+  color: $color-gray;
+  background: $color-gray;
+  font-size: 0;
+  border: 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
+  flex-direction: column;
+}
+.search-sort-filter {
+  display: flex;
+}
+.nothing-found {
+  color: $color-orange;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  .search-sort-filter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: "sort filter" "search search";
+    justify-items: center;
   }
-  
-  .content {
-    display: flex;
-    align-items: center;
-    margin: 0 2rem;
-    flex-direction: column;
+  .sort-section {
+    grid-area: sort;
   }
-  .search-sort-filter{
-    display: flex;
+  .search-section {
+    order: 3;
+    grid-area: search;
+    margin: 1rem 0;
   }
-  .nothing-found{
-    color: $color-orange;
+  .filter-section {
+    grid-area: filter;
   }
+}

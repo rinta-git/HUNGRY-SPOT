@@ -12,6 +12,7 @@
   margin-top: 0.313rem;
   position: absolute;
   background-color: #fff;
+  z-index: 10000;
 }
 
 .primary-btn {
@@ -22,13 +23,16 @@
   background-color: $color-orange;
   color: #fff;
   font-size: $fs-15;
-  &:disabled{
+  &:disabled {
     background-color: #ccc;
     cursor: not-allowed;
     opacity: 0.5;
   }
 }
-
+.active-btn {
+  background-color: $color-orange;
+  background-image: linear-gradient(to right, $color-green, $color-orange);
+}
 .title-section {
   display: flex;
   justify-content: space-between;
@@ -74,7 +78,7 @@ ul.filter-list {
   padding-left: 1rem;
   margin-left: 1rem;
   font-size: $fs-13;
-  label{
+  label {
     white-space: nowrap;
   }
   label:hover,
@@ -95,6 +99,15 @@ ul.filter-list {
 }
 div.filter-buttons {
   display: flex;
-  gap:3;
+  gap: 3;
   padding: 0.8rem;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  .search-sort-filter {
+    width: 100%; 
+    max-width: 234px;
+  }
+  .filter-box {
+    right: 0;
+  }
 }

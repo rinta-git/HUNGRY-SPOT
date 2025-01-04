@@ -18,6 +18,7 @@ export const Sort = () => {
     filters,
     searchText,
     isSearchActive,
+    isSortingActive,
   } = useSelector((store) => store?.restaurants);
 
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ export const Sort = () => {
       updateFilteredRestaurants({
         filteredResList: sortedList,
         filters: filters.length ? filters : [],
-        isSortingActive: true,
+        isSortingActive: selectedOption !== SORT_OPTIONS[0],
         sortOption: selectedOption,
       })
     );
@@ -43,7 +44,14 @@ export const Sort = () => {
 
   return (
     <>
-      <button className="primary-btn" onClick={() => setShowSort(!showSort)}>
+      <button
+        className={`primary-btn ${
+          isSortingActive
+            ? "active-btn"
+            : ""
+        }`}
+        onClick={() => setShowSort(!showSort)}
+      >
         Sort
       </button>
       <section className={`sort-box ${showSort ? "show" : "hide"}`}>

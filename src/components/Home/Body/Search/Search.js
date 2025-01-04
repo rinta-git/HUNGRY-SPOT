@@ -24,7 +24,7 @@ export const Search = () => {
     if (sortOption !== "Relevance (Default)") {
       resultList = getSortedList(sortOption, resultList);
     }
-    if (filters.length) {
+    if (filters?.length) {
       resultList = filterRestaurentList(filters, resultList);
     }
     return resultList;
