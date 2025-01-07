@@ -57,10 +57,10 @@ nav ul li a {
   text-decoration: none;
 }
 nav ul li a.active {
-  color: #11cb21;
+  color: #8fc73f;
 }
 nav ul :hover {
-  color: #11cb21;
+  color: #8fc73f;
 }
 
 @media (min-width: 360px) and (max-width: 768px) {
@@ -252,7 +252,7 @@ body hr {
 
 .active-btn {
   background-color: #fcae4a;
-  background-image: linear-gradient(to right, #11cb21, #fcae4a);
+  background-image: linear-gradient(to right, #8fc73f, #fcae4a);
 }
 
 .title-section {
@@ -436,4 +436,59 @@ div.filter-buttons {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.tittle {
+  margin: 3rem 0;
+}
+
+.res-card {
+  background: linear-gradient(rgb(255, 255, 255) -6.71%, rgb(235, 235, 242) 56.19%, rgb(223, 223, 231) 106.56%);
+  padding: 0px 16px 16px;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+}
+.res-card .res-details {
+  border: 1px solid #c2c9d6;
+  border-radius: 10px;
+  background-color: white;
+}
+.res-card .res-details .card-tittle {
+  background-color: #8fc73f;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: white;
+  font-size: 1.25rem;
+}
+.res-card .res-details .card-details {
+  padding: 15px;
+}
+.res-card .res-details .card-details .location,
+.res-card .res-details .card-details .ratingTiming {
+  font-size: 0.938rem;
+}
+.res-card .res-details .card-details .ratingTiming {
+  margin: 10px 0;
+}
+.res-card .res-details .card-details h3 {
+  font-size: 0.813rem;
+  margin: 0;
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+  .res-card .res-details .location, .res-card .res-details .ratingTiming {
+    font-size: 0.813rem;
+  }
+}
+.menu {
+  text-align: center;
+}
+.menu .menu-card {
+  text-align: left;
+  font-size: 0.813rem;
+}
+
+.restaurent {
+  width: 100%;
+  max-width: 685px;
 }/*# sourceMappingURL=main.css.map */

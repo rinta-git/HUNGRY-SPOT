@@ -1,0 +1,48 @@
+.tittle{
+    margin: 3rem 0;
+}
+.res-card {
+  background: linear-gradient(
+    rgb(255, 255, 255) -6.71%,
+    rgb(235, 235, 242) 56.19%,
+    rgb(223, 223, 231) 106.56%
+  );
+  padding: 0px 16px 16px;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  .res-details {
+    border: 1px solid $color-gray;
+    border-radius: 10px;
+    background-color: white;
+    .card-tittle {
+      background-color: $color-green;
+      padding: 15px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: white;
+      font-size: $fs-20;
+    }
+    .card-details {
+      padding: 15px;
+      .location,
+      .ratingTiming {
+        font-size: $fs-15;
+      }
+      .ratingTiming {
+        margin: 10px 0;
+      }
+      h3 {
+        font-size: $fs-13;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+    .res-card .res-details {
+        .location, .ratingTiming {
+            font-size: .813rem;
+        }
+    }
+}
