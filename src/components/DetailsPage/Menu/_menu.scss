@@ -1,7 +1,52 @@
-.menu{
-    text-align: center;
-    .menu-card{
-        text-align: left;
-        font-size: $fs-13;
+.menu {
+  text-align: center;
+  .menu-card {
+    text-align: left;
+    font-size: $fs-13;
+    .menu-items-title {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      cursor: pointer;
     }
+    .menu-item {
+      display: flex;
+      padding-bottom: 1rem;
+      .menu-desc {
+        color: $color-textGray;
+        a{
+            text-decoration: none;
+            color: $color-textGray;
+        }
+      }
+      .menu-rating {
+        color: $color-green;
+        padding: 0.5rem 0;
+      }
+      .menu-item-img {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        max-height: 174px;
+    max-width: 156px;
+        img {
+          border-radius: 20px;
+          object-fit: cover;
+        }
+        .add-btn {
+          position: absolute;
+          bottom: -11px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 5px 9px;
+          background-color: #000;
+          border: 1px solid #000;
+          color: #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

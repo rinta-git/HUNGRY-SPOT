@@ -19,6 +19,8 @@ hr {
   margin: 0;
   padding: 0;
 }
-
+.star{
+  color: $color-green;
+}
 @import '../components/Home/home';
 @import '../components/DetailsPage/resDetails';

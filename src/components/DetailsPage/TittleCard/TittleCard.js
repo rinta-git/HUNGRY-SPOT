@@ -25,7 +25,7 @@ export const TittleCard = ({ resDetails }) => {
           </h1>
           <h2 className="ratingTiming">
             <span>
-              <FontAwesomeIcon icon={faStar} /> {avgRating}
+              <FontAwesomeIcon icon={faStar} className="star" /> {avgRating}
             </span>
             <span>{" (" + totalRatingsString+")  "}</span>
             <span> • </span>

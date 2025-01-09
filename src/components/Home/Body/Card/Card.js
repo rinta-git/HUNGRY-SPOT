@@ -16,7 +16,7 @@ export const Card = (props) => {
           <h1>{restaurentName}</h1>
           <div>
             <span>
-              <FontAwesomeIcon icon={faStar} /> {rating}
+              <FontAwesomeIcon icon={faStar} className="star" /> {rating}
             </span>
             <span>&nbsp;&nbsp;{time}</span>
           </div>

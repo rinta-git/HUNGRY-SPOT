@@ -20,6 +20,10 @@ hr {
   padding: 0;
 }
 
+.star {
+  color: #8fc73f;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -486,6 +490,52 @@ div.filter-buttons {
 .menu .menu-card {
   text-align: left;
   font-size: 0.813rem;
+}
+.menu .menu-card .menu-items-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.menu .menu-card .menu-item {
+  display: flex;
+  padding-bottom: 1rem;
+}
+.menu .menu-card .menu-item .menu-desc {
+  color: rgba(2, 6, 12, 0.6);
+}
+.menu .menu-card .menu-item .menu-desc a {
+  text-decoration: none;
+  color: rgba(2, 6, 12, 0.6);
+}
+.menu .menu-card .menu-item .menu-rating {
+  color: #8fc73f;
+  padding: 0.5rem 0;
+}
+.menu .menu-card .menu-item .menu-item-img {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  max-height: 174px;
+  max-width: 156px;
+}
+.menu .menu-card .menu-item .menu-item-img img {
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.menu .menu-card .menu-item .menu-item-img .add-btn {
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 9px;
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .restaurent {
