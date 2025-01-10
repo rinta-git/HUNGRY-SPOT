@@ -14,9 +14,10 @@
       padding-bottom: 1rem;
       .menu-desc {
         color: $color-textGray;
-        a{
-            text-decoration: none;
-            color: $color-textGray;
+        word-break: break-word;
+        a {
+          text-decoration: none;
+          color: $color-textGray;
         }
       }
       .menu-rating {
@@ -29,14 +30,20 @@
         flex-direction: column;
         position: relative;
         max-height: 174px;
-    max-width: 156px;
+        min-width: 156px;
+        overflow: hidden;
+        margin-left: 2rem;
         img {
           border-radius: 20px;
           object-fit: cover;
+          width: 156px;
+          height: 114px;
+          display: block;
+          margin: 1.7rem 0;
         }
         .add-btn {
           position: absolute;
-          bottom: -11px;
+          bottom: 14px;
           left: 50%;
           transform: translateX(-50%);
           padding: 5px 9px;
@@ -48,5 +55,31 @@
         }
       }
     }
+  }
+  .category-seperator {
+    height: 15px;
+    background: #dfdfe7;
+    margin-top: 15px;
+  }
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  .menu .menu-card .menu-item {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+  .menu .menu-card .menu-item .menu-desc {
+    display: none;
+  }
+  .menu .menu-card .menu-item .menu-item-img {
+    max-width: 156px;
+    margin-left: 0;
+  }
+  .menu .menu-card .menu-item .menu-item-img img {
+    margin-top: 0.7rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .menu .menu-card .menu-item .menu-desc {
+    display: block;
   }
 }

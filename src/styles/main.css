@@ -503,6 +503,7 @@ div.filter-buttons {
 }
 .menu .menu-card .menu-item .menu-desc {
   color: rgba(2, 6, 12, 0.6);
+  word-break: break-word;
 }
 .menu .menu-card .menu-item .menu-desc a {
   text-decoration: none;
@@ -518,16 +519,22 @@ div.filter-buttons {
   flex-direction: column;
   position: relative;
   max-height: 174px;
-  max-width: 156px;
+  min-width: 156px;
+  overflow: hidden;
+  margin-left: 2rem;
 }
 .menu .menu-card .menu-item .menu-item-img img {
   border-radius: 20px;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 156px;
+  height: 114px;
+  display: block;
+  margin: 1.7rem 0;
 }
 .menu .menu-card .menu-item .menu-item-img .add-btn {
   position: absolute;
-  bottom: -11px;
+  bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
   padding: 5px 9px;
@@ -537,7 +544,33 @@ div.filter-buttons {
   border-radius: 5px;
   cursor: pointer;
 }
+.menu .category-seperator {
+  height: 15px;
+  background: #dfdfe7;
+  margin-top: 15px;
+}
 
+@media (min-width: 360px) and (max-width: 768px) {
+  .menu .menu-card .menu-item {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+  .menu .menu-card .menu-item .menu-desc {
+    display: none;
+  }
+  .menu .menu-card .menu-item .menu-item-img {
+    max-width: 156px;
+    margin-left: 0;
+  }
+  .menu .menu-card .menu-item .menu-item-img img {
+    margin-top: 0.7rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .menu .menu-card .menu-item .menu-desc {
+    display: block;
+  }
+}
 .restaurent {
   width: 100%;
   max-width: 685px;

@@ -20,7 +20,9 @@ export const Menu = ({ resMenu }) => {
   };
   const renderMenuList = (card) => {
     const isActive = accordion === card?.title;
+    const lastItem = card?.itemCards[card?.itemCards.length - 1];
     return (
+      <>
       <div className="menu-card" key={card?.title}>
         <div
           className="menu-items-title"
@@ -42,7 +44,7 @@ export const Menu = ({ resMenu }) => {
               const desc =
                 showFullDesc === fullDesc
                   ? fullDesc
-                  : fullDesc.slice(0, 140) + "...";
+                  : fullDesc.slice(0, 85) + "...";
               return (
                 <>
                   <div className="menu-item" key={item?.card?.info?.name}>
@@ -85,7 +87,7 @@ export const Menu = ({ resMenu }) => {
                             toggleDesc(item?.card?.info?.description);
                           }}
                         >
-                          <b>{showFullDesc === fullDesc ? "less" : "more"}</b>
+                          <b>{showFullDesc === fullDesc ? " less" : "more"}</b>
                         </a>
                       </p>
                     </div>
@@ -94,22 +96,25 @@ export const Menu = ({ resMenu }) => {
                         className="item-img"
                         src={`${MENU_IMG_URL_PREFIX}${item?.card?.info?.imageId}`}
                         alt={item?.card?.info?.name}
+                        height="144"
                       />
                       <button className="add-btn">Add +</button>
                     </div>
                   </div>
-                  <hr />
+                 { item?.card?.info?.name !== lastItem?.card?.info?.name ? <hr /> : "" } 
                 </>
               );
             })}
           </div>
         )}
       </div>
+      <div className="category-seperator"></div>
+      </>
     );
   };
   return (
     <>
-      <h1>--- Menu ---</h1>
+      <h1 style={{marginBottom:"1rem"}}>--- Menu ---</h1>
       <hr />
       <section className="menu-wrapper">
         {cards?.map((item) =>
