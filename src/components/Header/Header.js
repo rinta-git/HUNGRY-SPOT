@@ -1,6 +1,7 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router";
 
 export const Header = () => {
@@ -10,6 +11,11 @@ export const Header = () => {
     navRef.current.classList.toggle("active");
     menuRef.current.classList.toggle("active");
   };
+  const { cartItems } = useSelector((store) => store.resDetails);
+  const totalItems = cartItems.reduce((acc, item) => {
+    acc = item.count + acc;
+    return acc;
+  }, 0)
   return (
     <>
       <header>
@@ -34,9 +40,10 @@ export const Header = () => {
             <li>
               <NavLink to="/about">About</NavLink>
             </li>
-            <li>
+            <li className="cart-icon">
               <NavLink to="/cart">
                 <FontAwesomeIcon icon={faCartShopping} />
+                <span className="cart-total">{totalItems}</span>
               </NavLink>
             </li>
           </ul>

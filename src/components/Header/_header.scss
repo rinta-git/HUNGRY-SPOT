@@ -30,15 +30,35 @@ nav {
 
     li {
       cursor: pointer;
-      a{
+      a {
         color: $color-orange;
         text-decoration: none;
       }
-      a.active{
+      a.active {
         color: $color-green;
       }
-    }:hover{
+    }
+    :hover {
       color: $color-green;
+    }
+    .cart-icon {
+      position: relative;
+      .cart-total {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: $color-green;
+        color: #000;
+        border-radius: 50%;
+        font-size: $fs-13;
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+      }
     }
   }
 }

@@ -12,6 +12,7 @@
     .menu-item {
       display: flex;
       padding-bottom: 1rem;
+      justify-content: space-between;
       .menu-desc {
         color: $color-textGray;
         word-break: break-word;
@@ -40,6 +41,7 @@
           height: 114px;
           display: block;
           margin: 1.7rem 0;
+          border: 1px solid $color-gray;
         }
         .add-btn {
           position: absolute;

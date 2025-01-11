@@ -37,3 +37,5 @@ export const SORT_OPTIONS = [
   "Name",
   "Location",
 ];
+
+export const isEmptyObject = (obj) => Object.keys(obj).length === 0;

@@ -27,13 +27,10 @@ const restaurantsSlice = createSlice({
       state.isSearchActive =
         action.payload?.isSearchActive ?? state?.isSearchActive;
       state.searchText = action.payload?.searchText ?? state?.searchText; //returns action.payload.searchText if it is not null or undefined. Otherwise, it retains the current value of state.searchText
-    },
-    removeItem: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload.id);
-    },
+    }
   },
 });
 
-export const { addRestaurants, updateFilteredRestaurants, removeItem } =
+export const { addRestaurants, updateFilteredRestaurants } =
   restaurantsSlice.actions;
 export default restaurantsSlice.reducer;
