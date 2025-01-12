@@ -559,11 +559,15 @@ div.filter-buttons {
   left: 50%;
   transform: translateX(-50%);
   padding: 5px 9px;
-  background-color: #000;
-  border: 1px solid #000;
+  background-color: #fcae4a;
+  border: 1px solid #fcae4a;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+}
+.menu .menu-card .menu-item .menu-item-img .add-btn:hover {
+  background-color: #8fc73f;
+  border: 1px solid #8fc73f;
 }
 .menu .category-seperator {
   height: 15px;
@@ -595,4 +599,24 @@ div.filter-buttons {
 .restaurent {
   width: 100%;
   max-width: 685px;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.empty-cart .order-btn {
+  background-color: #fcae4a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.empty-cart .order-btn:hover {
+  background-color: #8fc73f;
 }/*# sourceMappingURL=main.css.map */

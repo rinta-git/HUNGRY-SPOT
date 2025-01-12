@@ -49,11 +49,15 @@
           left: 50%;
           transform: translateX(-50%);
           padding: 5px 9px;
-          background-color: #000;
-          border: 1px solid #000;
+          background-color: $color-orange;
+          border: 1px solid $color-orange;
           color: #fff;
-          border-radius: 5px;
+          border-radius: 10px;
           cursor: pointer;
+          &:hover {
+            background-color: $color-green;
+            border: 1px solid $color-green;
+          }
         }
       }
     }
