@@ -8,12 +8,12 @@ const resDetailsSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       let isExistingItem = state.cartItems.find(
-        (item) => item.id === action.payload.id
+        (item) => item.card?.info?.id === action.payload.card?.info?.id
       );
       let newCartItems;
       if (isExistingItem) {
         newCartItems = state.cartItems.map((item) =>
-          item.id === action.payload.id
+          item?.card?.info?.id === action.payload.card?.info?.id
             ? { ...item, count: (item.count || 0) + 1 }
             : item
         );
@@ -24,9 +24,16 @@ const resDetailsSlice = createSlice({
       }
       return { ...state, cartItems: newCartItems };
     },
+    updateQty: (state, action) => {
+      state.cartItems = state.cartItems.map((item) =>
+        item.card?.info?.id === action.payload.card?.info?.id
+          ? { ...item, count: action.payload.count }
+          : item
+      );
+    },
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter(
-        (item) => item.id !== action.payload.id
+        (item) => item.card?.info?.id !== action.payload.card?.info?.id
       );
     },
     clearCart: (state) => {
@@ -35,5 +42,5 @@ const resDetailsSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, clearCart } = resDetailsSlice.actions;
+export const { addToCart, updateQty, removeFromCart, clearCart } = resDetailsSlice.actions;
 export default resDetailsSlice.reducer;

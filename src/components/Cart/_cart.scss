@@ -17,3 +17,11 @@
     }
   }
 }
+.change-qty-btn{
+    display: flex;
+    gap: 15px;
+    cursor: default !important;
+    .change-btn{
+        cursor: pointer;
+    }
+}

@@ -619,4 +619,13 @@ div.filter-buttons {
 }
 .empty-cart .order-btn:hover {
   background-color: #8fc73f;
+}
+
+.change-qty-btn {
+  display: flex;
+  gap: 15px;
+  cursor: default !important;
+}
+.change-qty-btn .change-btn {
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
