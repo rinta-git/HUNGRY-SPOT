@@ -7,9 +7,17 @@ import {
   updateQty,
 } from "../DetailsPage/resDetailsSlice";
 import { getCartTotalCount, getSubTotal, notify } from "../../utils/common";
-import { CART_CLEAR_MSG, CART_REMOVE_MSG, CART_UPDATE_MSG, DELIVERY_FEE, PLATFORM_FEE } from "../../utils/constants";
+import {
+  CART_CLEAR_MSG,
+  CART_REMOVE_MSG,
+  CART_UPDATE_MSG,
+  DELIVERY_FEE,
+  PLATFORM_FEE,
+} from "../../utils/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router";
+import { Tooltip } from "react-tooltip";
 
 export const Cart = () => {
   const { cartItems, resInfo } = useSelector((store) => store.resDetails);
@@ -95,11 +103,35 @@ export const Cart = () => {
                 <span>₹{subTotal}</span>
               </div>
               <div className="rate delivery-fee">
-                <span>Delivery Fee | 50.8 kms</span>
+                <span class="tooltip-container">
+                  Delivery Fee | 50.8 kms{" "}
+                  <div class="tooltip-icon">
+                    <a
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content="Standard Fee: ₹20"
+                      data-tooltip-place="top"
+                    >
+                      i
+                    </a>
+                    <Tooltip id="my-tooltip" />
+                  </div>
+                </span>
                 <span>₹{DELIVERY_FEE}</span>
               </div>
               <div className="rate platform-fee">
-                <span>Platform fee</span>
+                <span class="tooltip-container">
+                  Platform fee
+                  <div class="tooltip-icon">
+                    <a
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content="This fee help us operate and improve our platform."
+                      data-tooltip-place="top"
+                    >
+                      i
+                    </a>
+                    <Tooltip id="my-tooltip" />
+                  </div>
+                </span>
                 <span>₹{PLATFORM_FEE}</span>
               </div>
               <hr style={{ margin: "1rem 0" }} />
@@ -113,9 +145,11 @@ export const Cart = () => {
               </div>
             </div>
             <div className="proceed-payment">
-              <button className="proceed-btn">
-                Pay Now <FontAwesomeIcon icon={faAnglesRight} />
-              </button>
+              <Link to="/checkout">
+                <button className="proceed-btn">
+                  Pay Now <FontAwesomeIcon icon={faAnglesRight} />
+                </button>
+              </Link>
             </div>
             <div className="proceed-payment">
               <button className="proceed-btn" onClick={handleClearCart}>

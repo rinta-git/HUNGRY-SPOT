@@ -14,3 +14,25 @@
     -o-transform: $transform;
   }
   
+  // Define the mixin
+@mixin center-text-style($color-orange, $color-green) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@mixin btn($color-orange, $color-green) {
+  background-color: $color-orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+
+  &:hover {
+    background-color: $color-green;
+  }
+}

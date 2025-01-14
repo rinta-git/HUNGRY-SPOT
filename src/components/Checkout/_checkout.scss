@@ -1,0 +1,7 @@
+.checkout{
+    @include center-text-style($color-orange, $color-green);
+  .order-btn{
+    @include btn($color-orange, $color-green);
+  }
+  text-align: center;
+}

@@ -1,0 +1,66 @@
+/* Overall container style */
+.about-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header style */
+  .about-page h1 {
+    font-size: $fs-36;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Subtitle styles */
+  .about-page h2 {
+    font-size: $fs-24;
+    color: #444;
+    margin-top: 30px;
+  }
+  
+  /* Paragraph styles */
+  .about-page p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  /* List styles */
+  .about-page ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .about-page ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Emphasis styles */
+  .about-page b {
+    color: #c0392b;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .about-page {
+      padding: 10px;
+    }
+  
+    .about-page h1 {
+      font-size: $fs-24;
+    }
+  
+    .about-page h2 {
+      font-size: 1.5rem;
+    }
+  
+    .about-page p, .about-page ul {
+      font-size: 1rem;
+    }
+  }
+  

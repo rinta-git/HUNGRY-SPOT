@@ -4,6 +4,7 @@ import { RES_DETAILS } from "../../utils/constants";
 import { TittleCard } from "./TittleCard/TittleCard";
 import { Menu } from "./Menu/Menu";
 import { ReplaceCart } from "../ReplaceCart/ReplaceCart";
+import { ShimmerDetails } from "./ShimmerDetails";
 
 export const ResDetails = () => {
   const [resData, setResData] = useState([]);
@@ -23,7 +24,7 @@ export const ResDetails = () => {
       console.error("Error fetching restaurants:", error);
     }
   };
-  console.log(resData);
+  if(resData.length === 0) return <main className="content"><ShimmerDetails /></main>;
   return (
     resData.length > 0 && (
       <>

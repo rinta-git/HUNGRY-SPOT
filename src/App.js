@@ -11,6 +11,7 @@ import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { ResDetails } from "./components/DetailsPage/ResDetails";
 import { ToastContainer } from "react-toastify";
+import { Checkout } from "./components/Checkout/Checkout";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const appRouter = createBrowserRouter([
       { path: "/about", element: <AboutUs /> },
       { path: "/cart", element: <Cart /> },
       { path: "/restuarant/:resId", element: <ResDetails /> },
+      { path: "/Checkout", element: <Checkout /> },
     ],
   },
 ]);

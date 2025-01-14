@@ -16,3 +16,27 @@
   background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
   z-index: 1; /* Sit on top */
 }
+.shimmer-card.restaurent{
+  margin: 3rem 0;
+  margin-bottom: 8rem;
+}
+.shimmer-res-tittle{
+  height: 65px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.shimmer-data{
+  padding: 15px;
+}
+.shimmer-res-content{
+  border-radius: 8px;
+    width: 100%;
+    height: 8px;
+    margin-bottom: 10px;
+}
+.shimmer-card.menu{
+  width: 100%;
+  max-width: 685px;
+  height: 55px;
+  margin-bottom: 3rem;
+}
