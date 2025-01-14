@@ -1,16 +1,40 @@
 # HUNGRY-SPOT
 
+## Table of contents
+
+- [Overview](#overview)
+  - [Screenshots](#screenshots)
+  - [Links](#links)
+  - [Objectives](#objectives)
+  - [Features](#features)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+
 A food ordering web app using React.
 
-## Description
+## Overview
 This platform was developed as a demo project to showcase my frontend development skills using Parcel for bundling and React Redux for state management. This project reflects my dedication to creating seamless and user-friendly interfaces.
 
-## Objectives
+### Screenshots
+
+![Desktop View](./screenshorts/dView.jpeg)
+
+![Mobile View](./screenshorts/mView.jpeg)
+
+### Links
+
+- Solution URL: [Code](https://github.com/rinta-git/HUNGRY-SPOT/blob/main/src/App.js)
+- Live Site URL: [HUNGRY-SPOT]()
+
+### Objectives
 - **Excellence in Design:** Crafting a visually appealing interface that prioritizes ease of use.
 - **Optimized Performance:** Ensuring fast load times and smooth interactions for a satisfying user experience.
 - **Responsive Design:** Making sure the website works well on both desktop and mobile devices.
 
-## Features
+### Features
 - **User-Friendly Menu:** Browse through an extensive catalog of delicious dishes with detailed descriptions and appetizing images.
 - **Real-Time Cart Updates:** Add or remove items from your cart and see the total cost update instantly.
 - **Intuitive Navigation:** Enjoy a smooth and intuitive browsing experience across the website.
@@ -20,7 +44,9 @@ This platform was developed as a demo project to showcase my frontend developmen
 - **Filter and Sort:** Filter and sort restaurants based on different criteria such as rating, cuisine, and more.
 - **Shimmer UI:** Experience a visually appealing loading state with shimmer effects to indicate content is loading.
 
-## Technologies Used
+## My process
+
+### Built with
 - **Frontend Frameworks/Libraries:** Leveraged modern technology like React to create a dynamic and responsive user interface.
 - **State Management:** Integrated React Redux for efficient state management across the application.
 - **Bundling:** Used Parcel for quick and easy bundling and asset management.
@@ -29,10 +55,17 @@ This platform was developed as a demo project to showcase my frontend developmen
 - **React Router:** Enabled dynamic, client-side routing.
 - **React Toastify:** Added toast notifications for immediate feedback.
 
-## Future Development
-As I continue to develop and enhance this platform, you may find more features and improvements in the future. Stay tuned for updates!
+### Continued development
+As I continue to develop and enhance this platform, you may find more features and improvements in the future like retaining cart on page refresh, checkout page enhancement and more. Stay tuned for updates!
 
-## About the Developer
+### Useful resources
+
+- [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This helped me for quickly checking both flexbox and grid proprties and its usage.
+- [Fontawsome Icons](https://fontawesome.com/)
+
+## Author
 I'm an enthusiastic developer with a passion for creating interactive and effective web applications. This project showcases my skills in frontend development, my aptitude for using modern state management libraries like React Redux, and my ability to leverage bundlers like Parcel.
 
 Thank you for visiting! I hope you enjoy exploring this website as much as I enjoyed building it.
+- Website - [Rinta Roy](https://www.linkedin.com/in/rinta-roy)
+- Frontend Mentor - [@rinta-git](https://www.frontendmentor.io/profile/rinta-git)
