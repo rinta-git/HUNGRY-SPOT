@@ -1,5 +1,8 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { use, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addResInfo } from "../resDetailsSlice";
 
 export const TittleCard = ({ resDetails }) => {
   const {
@@ -12,6 +15,10 @@ export const TittleCard = ({ resDetails }) => {
     cuisines,
     totalRatingsString,
   } = resDetails?.card?.card?.info || {};
+  const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(addResInfo({ name, areaName, city }));
+  // },[])
   return (
     <>
       <section className="res-card">

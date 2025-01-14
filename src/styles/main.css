@@ -596,9 +596,56 @@ div.filter-buttons {
     display: block;
   }
 }
+.replace-cart-model {
+  border: 1px solid #c2c9d6;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1;
+  overflow: auto;
+  background-color: white;
+  padding: 2rem;
+  width: 330px;
+}
+.replace-cart-model .title {
+  font-size: 1.25rem;
+}
+.replace-cart-model .replace-desc {
+  font-size: 0.813rem;
+  color: rgba(2, 6, 12, 0.6);
+  margin: 0.5rem 0;
+}
+.replace-cart-model .button-options {
+  display: flex;
+  gap: 2rem;
+}
+.replace-cart-model .cancel-button, .replace-cart-model .replace-btn {
+  width: 50%;
+  padding: 10px;
+  background-color: #fcae4a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.replace-cart-model .cancel-button:hover, .replace-cart-model .replace-btn:hover {
+  background-color: #8fc73f;
+}
+
 .restaurent {
   width: 100%;
   max-width: 685px;
+}
+
+.overlay {
+  position: fixed; /* Stay in place */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 1; /* Sit on top */
 }
 
 .empty-cart {
@@ -621,6 +668,59 @@ div.filter-buttons {
   background-color: #8fc73f;
 }
 
+.order-list-title {
+  margin: 3rem 0;
+}
+
+.my-orders {
+  width: 100%;
+  max-width: 685px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.my-orders .res-title {
+  font-size: 0.938rem;
+}
+.my-orders .location {
+  margin-bottom: 0.5rem;
+}
+.my-orders .order-list {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 15px;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 60%;
+}
+.my-orders .billing-section {
+  font-size: 0.75rem;
+  width: 40%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.my-orders .billing-section .price-section {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+}
+.my-orders .billing-section .proceed-payment {
+  width: 100%;
+  margin-top: 1rem;
+}
+.my-orders .billing-section .proceed-payment .proceed-btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fcae4a;
+  color: white;
+  cursor: pointer;
+}
+.my-orders .billing-section .proceed-payment .proceed-btn:hover {
+  background-color: #8fc73f;
+}
+
 .change-qty-btn {
   display: flex;
   gap: 15px;
@@ -628,4 +728,43 @@ div.filter-buttons {
 }
 .change-qty-btn .change-btn {
   cursor: pointer;
+}
+
+.single-item-price {
+  margin-top: 0.5rem;
+}
+.single-item-price .items-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.single-item-price .items-list b {
+  color: #8fc73f;
+}
+
+.bill {
+  text-align: left;
+  font-size: 0.813rem;
+  margin: 1rem 0;
+}
+
+.rate {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+  .my-orders {
+    flex-direction: column;
+  }
+  .my-orders .order-list {
+    width: 100%;
+  }
+  .my-orders .billing-section {
+    width: 100%;
+  }
+  .my-orders .menu-item {
+    flex-direction: row !important;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -17,11 +17,95 @@
     }
   }
 }
-.change-qty-btn{
-    display: flex;
-    gap: 15px;
-    cursor: default !important;
-    .change-btn{
-        cursor: pointer;
+.order-list-title {
+  margin: 3rem 0;
+}
+.my-orders {
+  width: 100%;
+  max-width: 685px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  .res-title {
+    font-size: $fs-15;
+  }
+  .location {
+    margin-bottom: 0.5rem;
+  }
+  .order-list {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 15px;
+    height: fit-content;
+    width: 60%;
+  }
+  .billing-section {
+    font-size: $fs-12;
+    width: 40%;
+    height: fit-content;
+    .price-section {
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      padding: 10px;
     }
+    .proceed-payment {
+      width: 100%;
+      margin-top: 1rem;
+      .proceed-btn {
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: $color-orange;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          background-color: $color-green;
+        }
+      }
+    }
+  }
+}
+.change-qty-btn {
+  display: flex;
+  gap: 15px;
+  cursor: default !important;
+  .change-btn {
+    cursor: pointer;
+  }
+}
+.single-item-price {
+  margin-top: 0.5rem;
+  .items-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    b {
+      color: $color-green;
+    }
+  }
+}
+.bill {
+  text-align: left;
+  font-size: $fs-13;
+  margin: 1rem 0;
+}
+.rate {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  .my-orders {
+    flex-direction: column;
+    .order-list {
+      width: 100%;
+    }
+    .billing-section {
+      width: 100%;
+    }
+    .menu-item {
+      flex-direction: row !important;
+    }
+  }
 }

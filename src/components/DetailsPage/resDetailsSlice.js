@@ -4,6 +4,7 @@ const resDetailsSlice = createSlice({
   name: "resDetails",
   initialState: {
     cartItems: [], //cart items
+    resInfo: {}, //restaurant info
   },
   reducers: {
     addToCart: (state, action) => {
@@ -39,8 +40,12 @@ const resDetailsSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = [];
     },
+    addResInfo: (state, action) => {
+      console.log('hi',action.payload)
+      state.resInfo = action.payload;
+    },
   },
 });
 
-export const { addToCart, updateQty, removeFromCart, clearCart } = resDetailsSlice.actions;
+export const { addToCart, updateQty, removeFromCart, clearCart, addResInfo } = resDetailsSlice.actions;
 export default resDetailsSlice.reducer;

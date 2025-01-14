@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router";
+import { getCartTotalCount } from "../../utils/common";
 
 export const Header = () => {
   const navRef = useRef();
@@ -12,10 +13,7 @@ export const Header = () => {
     menuRef.current.classList.toggle("active");
   };
   const { cartItems } = useSelector((store) => store.resDetails);
-  const totalItems = cartItems.reduce((acc, item) => {
-    acc = item.count + acc;
-    return acc;
-  }, 0)
+  const totalItems = getCartTotalCount(cartItems);
   return (
     <>
       <header>

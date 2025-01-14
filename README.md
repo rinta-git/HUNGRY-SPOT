@@ -4,3 +4,4 @@
     - Used redux, scss, hooks
     - Used shimmer UI
     - Used react-router
+    - Used react-toastify

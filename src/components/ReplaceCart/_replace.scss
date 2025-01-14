@@ -1,0 +1,34 @@
+.replace-cart-model{
+    border: 1px solid $color-gray;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    background-color: white;
+    padding: 2rem;
+    width: 330px;
+    .title{
+        font-size: $fs-20;
+    }
+    .replace-desc{
+        font-size: $fs-13;
+        color: $color-textGray;
+        margin: .5rem 0;
+    }
+    .button-options{
+        display: flex;
+        gap:2rem;
+    }
+    .cancel-button, .replace-btn{
+        width: 50%;
+        padding: 10px;
+        background-color: $color-orange;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover{
+            background-color: $color-green;
+        }
+    }
+}

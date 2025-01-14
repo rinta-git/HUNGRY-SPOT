@@ -10,6 +10,7 @@ import { Error } from "./components/404/Error";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { ResDetails } from "./components/DetailsPage/ResDetails";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <hr />
       <Outlet />
       <Footer />
+      <ToastContainer />
     </Provider>
   );
 };
@@ -31,7 +33,7 @@ const appRouter = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/about", element: <AboutUs /> },
       { path: "/cart", element: <Cart /> },
-      { path: "/restuarant/:resId", element: <ResDetails />}
+      { path: "/restuarant/:resId", element: <ResDetails /> },
     ],
   },
 ]);

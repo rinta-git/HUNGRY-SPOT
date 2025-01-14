@@ -1,7 +1,8 @@
-import { isEmptyObject, MENU_IMG_URL_PREFIX } from "../../../utils/constants";
+import { MENU_IMG_URL_PREFIX } from "../../../utils/constants";
 import { faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation } from "react-router";
+import { isEmptyObject } from "../../../utils/common";
 export const MenuItem = ({
   item,
   showFullDesc,

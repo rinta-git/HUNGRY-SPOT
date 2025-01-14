@@ -38,4 +38,11 @@ export const SORT_OPTIONS = [
   "Location",
 ];
 
-export const isEmptyObject = (obj) => Object.keys(obj).length === 0;
+export const DELIVERY_FEE = 20;
+export const PLATFORM_FEE = 9;
+
+export const CART_REPLACEMENT_MSG = "Cart items removed successfully. Please add items to your cart.";
+export const CART_ADD_MSG = "Item added to cart successfully.";
+export const CART_UPDATE_MSG = "Item count changed.";
+export const CART_REMOVE_MSG = "Item removed from cart successfully.";
+export const CART_CLEAR_MSG = "Cart cleared successfully.";
