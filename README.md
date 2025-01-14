@@ -20,10 +20,10 @@ This platform was developed as a demo project to showcase my frontend developmen
 ### Screenshots
 
 #### Desktop Home Page View 
-<img src="./screenshots/dView.png" alt="Desktop View" width="700"/>
+<img src="./screenshorts/dView.png" alt="Desktop View" width="700"/>
 
-#### Mobile Home Page View 
-<img src="./screenshots/mView.png" alt="Mobile View" width="400"/>
+#### Mobile View 
+<img src="./screenshorts/mView.png" alt="Mobile View" width="400"/>
 
 ### Links
 
