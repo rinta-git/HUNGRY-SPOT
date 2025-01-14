@@ -10,7 +10,6 @@
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 A food ordering web app using React.
@@ -20,9 +19,9 @@ This platform was developed as a demo project to showcase my frontend developmen
 
 ### Screenshots
 
-![Desktop View](./screenshorts/dView.jpeg)
+![Desktop View](./screenshorts/dView.png)
 
-![Mobile View](./screenshorts/mView.jpeg)
+![Mobile View](./screenshorts/mView.png)
 
 ### Links
 
@@ -57,11 +56,6 @@ This platform was developed as a demo project to showcase my frontend developmen
 
 ### Continued development
 As I continue to develop and enhance this platform, you may find more features and improvements in the future like retaining cart on page refresh, checkout page enhancement and more. Stay tuned for updates!
-
-### Useful resources
-
-- [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This helped me for quickly checking both flexbox and grid proprties and its usage.
-- [Fontawsome Icons](https://fontawesome.com/)
 
 ## Author
 I'm an enthusiastic developer with a passion for creating interactive and effective web applications. This project showcases my skills in frontend development, my aptitude for using modern state management libraries like React Redux, and my ability to leverage bundlers like Parcel.
