@@ -3,7 +3,7 @@ export const AboutUs = () => {
     <>
       <main className="content">
         <div className="about-page">
-          <h1>About Us</h1>{" "}
+          <h1>About App</h1>{" "}
           <p style={{ textAlign: "center" }}>
             {" "}
             Welcome to my Food Ordering Website!{" "}
