@@ -27,9 +27,9 @@ This platform was developed as a demo project to showcase my frontend developmen
 
 ### Links
 :exclamation:**Important Note** - Data may not load due to CORS errors. To view the live data:
-    1. Install the [CORS Unblock extension](https://chrome.google.com/webstore/detail/cors-unblocklfhmimgjlgebhijbbcemjkljahjpfkfm) for Chrome. 
-    2. Or, visit [CORS Anywhere](https://cors-anywhere.herokuapp.com/corsdemo) and request temporary access. 
-    3. Once you've set this up, access the live site link above.
+1. Install the [CORS Unblock extension](https://chrome.google.com/webstore/detail/cors-unblocklfhmimgjlgebhijbbcemjkljahjpfkfm) for Chrome. 
+2. Or, visit [CORS Anywhere](https://cors-anywhere.herokuapp.com/corsdemo) and request temporary access. 
+3. Once you've set this up, access the live site link above.
 
 - Solution URL: [Code](https://github.com/rinta-git/HUNGRY-SPOT/blob/main/src/App.js)
 - Live Site URL: [HUNGRY-SPOT](https://hungry-spot-rr.netlify.app/) (read the above important information if data is not loading)
