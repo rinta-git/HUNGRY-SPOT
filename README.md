@@ -27,7 +27,7 @@ This platform was developed as a demo project to showcase my frontend developmen
 
 ### Links
 :exclamation:**Important Note** - Data may not load due to CORS errors. To view the live data:
-1. Install the [CORS Unblock extension](https://chrome.google.com/webstore/detail/cors-unblocklfhmimgjlgebhijbbcemjkljahjpfkfm) for Chrome. 
+1. Install the [Allow CORS: Access-Control-Allow-Origin](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) for Chrome and **turn it on**. 
 2. Or, visit [CORS Anywhere](https://cors-anywhere.herokuapp.com/corsdemo) and request temporary access. 
 3. Once you've set this up, access the live site link above.
 
