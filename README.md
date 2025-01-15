@@ -28,7 +28,7 @@ This platform was developed as a demo project to showcase my frontend developmen
 ### Links
 
 - Solution URL: [Code](https://github.com/rinta-git/HUNGRY-SPOT/blob/main/src/App.js)
-- Live Site URL: [HUNGRY-SPOT]()
+- Live Site URL: [HUNGRY-SPOT](https://hungry-spot-rr.netlify.app/)
 
 ### Objectives
 - **Excellence in Design:** Crafting a visually appealing interface that prioritizes ease of use.

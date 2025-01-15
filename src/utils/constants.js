@@ -1,10 +1,18 @@
-export const RES_LIST =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-export const RES_DETAILS =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&submitAction=ENTER&restaurantId=";
-export const MENU_IMG_URL_PREFIX = "https://media-assets.swiggy.com/swiggy/";
+const encodedUrl = encodeURIComponent(
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+);
+const encodedResDetails = encodeURIComponent(
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&submitAction=ENTER&restaurantId="
+);
+const encodedImgUrl = encodeURIComponent(
+  "https://media-assets.swiggy.com/swiggy/"
+);
 
-  import { v4 as uuidv4 } from "uuid";
+export const RES_LIST = `https://corsproxy.io/?url=${encodedUrl}`;
+export const RES_DETAILS = `https://corsproxy.io/?url=${encodedResDetails}`;
+export const MENU_IMG_URL_PREFIX = `https://corsproxy.io/?url=${encodedImgUrl}`;
+
+import { v4 as uuidv4 } from "uuid";
 
 export const FILTERS = {
   Ratings: [
@@ -41,7 +49,8 @@ export const SORT_OPTIONS = [
 export const DELIVERY_FEE = 20;
 export const PLATFORM_FEE = 9;
 
-export const CART_REPLACEMENT_MSG = "Cart items removed successfully. Please add items to your cart.";
+export const CART_REPLACEMENT_MSG =
+  "Cart items removed successfully. Please add items to your cart.";
 export const CART_ADD_MSG = "Item added to cart successfully.";
 export const CART_UPDATE_MSG = "Item count changed.";
 export const CART_REMOVE_MSG = "Item removed from cart successfully.";
