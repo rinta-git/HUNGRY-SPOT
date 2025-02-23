@@ -34,7 +34,6 @@ To view the live data:
 
 - Solution URL: [Code](https://github.com/rinta-git/HUNGRY-SPOT/blob/main/src/App.js)
 - Live Site URL: [HUNGRY-SPOT](https://hungry-spot-rr.netlify.app/) (read the above important information if data is not loading)
-- Project plan: [HUNGRY-SPOT-PLANNER](https://www.notion.so/Hungry-Spot-1121a43fd4fe816089adf7c712570530?pvs=4)
 
 ### Objectives
 - **Excellence in Design:** Crafting a visually appealing interface that prioritizes ease of use.
