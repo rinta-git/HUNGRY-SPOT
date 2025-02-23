@@ -26,13 +26,15 @@ This platform was developed as a demo project to showcase my frontend developmen
 <img src="./screenshorts/mView.png" alt="Mobile View" width="400"/>
 
 ### Links
-:exclamation:**Important Note** - Data may not load due to CORS errors. To view the live data:
-1. Install the [Allow CORS: Access-Control-Allow-Origin](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) for Chrome and **turn it on**. 
-2. Or, visit [CORS Anywhere](https://cors-anywhere.herokuapp.com/corsdemo) and request temporary access. 
-3. Once you've set this up, access the live site link above.
+:exclamation:**Important Note** - Data may not load due to CORS errors. 
+To view the live data:
+   1. Install the [Allow CORS: Access-Control-Allow-Origin](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) for Chrome and **turn it on**. 
+   2. Or, visit [CORS Anywhere](https://cors-anywhere.herokuapp.com/corsdemo) and request temporary access. 
+   3. Once you've set this up, access the live site link above.
 
 - Solution URL: [Code](https://github.com/rinta-git/HUNGRY-SPOT/blob/main/src/App.js)
 - Live Site URL: [HUNGRY-SPOT](https://hungry-spot-rr.netlify.app/) (read the above important information if data is not loading)
+- Project plan: [HUNGRY-SPOT-PLANNER](https://www.notion.so/Hungry-Spot-1121a43fd4fe816089adf7c712570530?pvs=4)
 
 ### Objectives
 - **Excellence in Design:** Crafting a visually appealing interface that prioritizes ease of use.
